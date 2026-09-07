@@ -94,6 +94,36 @@ const benefits = [
   "Dokumentasi dan handover yang siap dipakai",
 ];
 
+const buildModes = [
+  {
+    id: "foundation",
+    label: "Foundation",
+    icon: Server,
+    title: "Server yang tetap tenang saat ramai.",
+    description: "Mulai dari fondasi yang rapi: struktur proxy, permission, storage, dan monitoring yang siap mengimbangi pertumbuhan pemain.",
+    metric: "01 / stable core",
+    points: ["Paper / Purpur tuning", "Proxy & network flow", "Backups & observability"],
+  },
+  {
+    id: "experience",
+    label: "Experience",
+    icon: Gamepad2,
+    title: "Gameplay yang punya alasan untuk kembali.",
+    description: "Setiap fitur harus terasa jelas bagi pemain—dari first join sampai progression panjang yang tetap menyenangkan.",
+    metric: "02 / player loop",
+    points: ["Progression systems", "Economy balance", "Onboarding yang jelas"],
+  },
+  {
+    id: "polish",
+    label: "Polish",
+    icon: Sparkles,
+    title: "Detail kecil yang membuat server terasa beda.",
+    description: "Feedback, command, UI, dan integrasi yang halus membuat kualitas server terasa tanpa harus berteriak.",
+    metric: "03 / final layer",
+    points: ["Custom plugin UX", "Discord integrations", "Clean handover"],
+  },
+];
+
 function LogoMark() {
   return (
     <div className="logo-mark" aria-hidden="true">
@@ -106,6 +136,7 @@ function LogoMark() {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeMode, setActiveMode] = useState("foundation");
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -256,6 +287,43 @@ export default function Home() {
                   <div className="service-arrow"><ArrowUpRight size={17} /></div>
                 </article>
               );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="blueprint-section">
+        <div className="blueprint-grid-lines" />
+        <div className="page-wrap blueprint-layout">
+          <div className="blueprint-intro">
+            <div className="section-kicker blueprint-kicker">/ HOW I THINK</div>
+            <h2>Server yang bagus<br /><span>punya blueprint.</span></h2>
+            <p>Bukan semua server perlu hal yang sama. Pilih layer yang ingin Anda kuatkan—saya mulai dari masalahnya, bukan dari plugin yang sedang tren.</p>
+            <div className="blueprint-sign"><span className="status-dot" /> system thinking / player empathy</div>
+          </div>
+
+          <div className="blueprint-console">
+            <div className="blueprint-tabs" role="tablist" aria-label="Server blueprint focus">
+              {buildModes.map((mode) => {
+                const Icon = mode.icon;
+                return (
+                  <button key={mode.id} className={activeMode === mode.id ? "blueprint-tab active" : "blueprint-tab"} type="button" role="tab" aria-selected={activeMode === mode.id} onClick={() => setActiveMode(mode.id)}>
+                    <Icon size={15} /> {mode.label}
+                  </button>
+                );
+              })}
+            </div>
+            {buildModes.map((mode) => {
+              const Icon = mode.icon;
+              return activeMode === mode.id ? (
+                <div className="blueprint-panel" key={mode.id}>
+                  <div className="blueprint-panel-top"><span className="blueprint-mode"><Icon size={14} /> {mode.metric}</span><span className="blueprint-live"><span className="status-dot" /> thinking in layers</span></div>
+                  <h3>{mode.title}</h3>
+                  <p>{mode.description}</p>
+                  <div className="blueprint-points">{mode.points.map((point, index) => <div key={point}><span>0{index + 1}</span>{point}<Check size={14} /></div>)}</div>
+                  <div className="blueprint-footer"><span>reiji.kurose / build-notes</span><span>●●●</span></div>
+                </div>
+              ) : null;
             })}
           </div>
         </div>
