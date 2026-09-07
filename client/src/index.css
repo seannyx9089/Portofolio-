@@ -292,8 +292,8 @@
   .nav-links.is-open { display: flex; }
   .nav-links a { padding: 12px 10px; width: 100%; }
   .hero-section { min-height: auto; padding: 121px 0 84px; }
-  .hero-image { background-position: 58% center; }
-  .hero-wash { background: linear-gradient(90deg, rgba(226, 250, 252, 0.95) 0%, rgba(226, 250, 252, 0.79) 100%); }
+  .hero-image { background-position: 68% center; background-size: auto 100%; opacity: 0.94; }
+  .hero-wash { background: linear-gradient(90deg, rgba(226, 250, 252, 0.78) 0%, rgba(226, 250, 252, 0.48) 100%); }
   .hero-content { align-items: stretch; flex-direction: column; gap: 52px; }
   .hero-copy h1 { font-size: clamp(46px, 14vw, 67px); }
   .hero-description { font-size: 13px; }

@@ -116,14 +116,13 @@ export default function Home() {
           <a className="brand" href="#top" onClick={closeMenu}>
             <LogoMark />
             <span>
-              <strong>AQUA</strong>
-              <em>MC.DEV</em>
+              <strong>REIJI</strong>
+              <em>KUROSE / DEV</em>
             </span>
           </a>
 
           <nav className={menuOpen ? "nav-links is-open" : "nav-links"} aria-label="Navigasi utama">
             <a href="#services" onClick={closeMenu}>Services</a>
-            <a href="#work" onClick={closeMenu}>Selected work</a>
             <a href="#about" onClick={closeMenu}>About me</a>
             <a href="#contact" onClick={closeMenu}>Contact</a>
           </nav>
@@ -172,8 +171,8 @@ export default function Home() {
                 Mulai ngobrol
                 <ArrowUpRight size={17} />
               </a>
-              <a className="button button-ghost" href="#work">
-                Lihat project
+              <a className="button button-ghost" href="#about">
+                Kenali saya
                 <ChevronRight size={17} />
               </a>
             </div>
@@ -201,7 +200,7 @@ export default function Home() {
                 </div>
                 <div className="console-intro">
                   <span className="console-kicker">HELLO, I&apos;M</span>
-                  <h2>Aqua<span>.</span></h2>
+                  <h2>Reiji<span>.</span></h2>
                   <p>building worlds<br />one system at a time</p>
                 </div>
                 <div className="console-readout">
@@ -262,33 +261,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="work" className="section work-section">
-        <div className="page-wrap">
-          <div className="section-heading heading-split work-heading">
-            <div>
-              <div className="section-kicker">/ SELECTED WORK</div>
-              <h2>Beberapa dunia yang<br /><span>pernah saya bangun.</span></h2>
-            </div>
-            <a className="text-link" href="#contact">Diskusikan project Anda <ArrowUpRight size={16} /></a>
-          </div>
-          <div className="project-list">
-            {projects.map((project) => (
-              <article className={`project-card ${project.tone}`} key={project.number}>
-                <div className="project-watermark">{project.number}</div>
-                <div className="project-meta"><span>{project.type}</span><span>case study <ArrowUpRight size={14} /></span></div>
-                <div className="project-content">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                </div>
-                <div className="project-shape"><span /><span /><span /></div>
-                <div className="project-corner"><ArrowUpRight size={20} /></div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="about" className="section about-section">
         <div className="page-wrap about-grid">
           <div className="about-visual">
@@ -335,7 +307,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="page-wrap footer-inner">
-          <div className="footer-brand"><LogoMark /><span>AQUA <em>MC.DEV</em></span></div>
+          <div className="footer-brand"><LogoMark /><span>REIJI <em>KUROSE / DEV</em></span></div>
           <p>Designed &amp; built with curiosity, caffeine, and clean code.</p>
           <div className="footer-right"><span>© 2026 Aqua</span><a href="#top" aria-label="Kembali ke atas"><ArrowDown size={15} className="rotate-up" /></a></div>
         </div>
