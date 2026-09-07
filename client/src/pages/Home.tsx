@@ -358,8 +358,8 @@ export default function Home() {
             <h2>Let&apos;s build a world<br /><span>worth staying in.</span></h2>
             <p>Ceritakan sedikit tentang server, mode permainan, atau masalah yang sedang Anda hadapi. Kita mulai dari sana.</p>
             <div className="contact-links">
-              <a href="mailto:hello@yourdomain.com"><Mail size={17} /> hello@yourdomain.com <ArrowUpRight size={15} /></a>
-              <a href="#contact"><MessageCircle size={17} /> Discord / username <ArrowUpRight size={15} /></a>
+              <a href="mailto:reijikurose3@gmail.com"><Mail size={17} /> reijikurose3@gmail.com <ArrowUpRight size={15} /></a>
+              <a href="https://wa.me/6283892113214" target="_blank" rel="noreferrer"><MessageCircle size={17} /> WhatsApp / 083892113214 <ArrowUpRight size={15} /></a>
             </div>
           </div>
           <div className="contact-card">
@@ -367,7 +367,7 @@ export default function Home() {
             <div className="contact-card-icon"><Rocket size={26} /></div>
             <h3>Punya ide yang ingin<br /><span>dibawa online?</span></h3>
             <p>Slot untuk project baru tersedia. Kirim brief singkat, saya akan membalas dengan langkah pertama yang paling masuk akal.</p>
-            <a className="button button-dark" href="mailto:hello@yourdomain.com?subject=Project%20Minecraft%20Server"><Mail size={17} /> Kirim brief project <ArrowUpRight size={17} /></a>
+            <a className="button button-dark" href="mailto:reijikurose3@gmail.com?subject=Project%20Minecraft%20Server"><Mail size={17} /> Kirim brief project <ArrowUpRight size={17} /></a>
             <div className="contact-trust"><CircleCheck size={15} /> No pressure. Just a good first chat.</div>
           </div>
         </div>
