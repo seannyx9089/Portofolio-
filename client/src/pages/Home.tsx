@@ -28,9 +28,9 @@ import {
 } from "lucide-react";
 
 const storage = {
-  waves: "/manus-storage/ocean-waves_979265a7.gif",
-  avatar: "/manus-storage/avatar-ocean_3d805b42.jpg",
-  avatarCasual: "/manus-storage/avatar-casual_f2a126f6.jpg",
+  waves: "/assets/ocean-waves.gif",
+  avatar: "/assets/avatar-ocean.jpg",
+  avatarCasual: "/assets/avatar-casual.jpg",
 };
 
 const services = [
