@@ -3,6 +3,7 @@ import {
   ArrowDown,
   ArrowUpRight,
   Blocks,
+  Bot,
   Braces,
   Check,
   ChevronRight,
@@ -124,6 +125,59 @@ const buildModes = [
   },
 ];
 
+const skillDeck = [
+  {
+    id: "discord",
+    label: "Discord setup",
+    short: "COMMUNITY",
+    icon: MessageCircle,
+    title: "Discord server yang siap jadi rumah komunitas.",
+    description: "Saya bisa menyiapkan server Discord dari nol: struktur channel, role, permission, onboarding, ticket, sampai automasi komunitas.",
+    tools: ["Roles & permission", "Ticket system", "Community flow"],
+    color: "deck-mint",
+  },
+  {
+    id: "website",
+    label: "Website custom",
+    short: "WEB / UI",
+    icon: Code2,
+    title: "Website custom yang nyambung dengan identitas server.",
+    description: "Landing page, portal komunitas, halaman status, atau website custom dengan visual yang tidak terasa seperti template biasa.",
+    tools: ["React / Vite", "Responsive UI", "Custom branding"],
+    color: "deck-sky",
+  },
+  {
+    id: "premium",
+    label: "Premium plugins",
+    short: "ECOSYSTEM",
+    icon: ShieldCheck,
+    title: "Setup plugin premium dan asset premium dengan rapi.",
+    description: "Kalau project membutuhkan plugin premium atau asset premium, saya bisa membantu setup, konfigurasi, integrasi, dan penyesuaiannya.",
+    tools: ["Plugin stack", "Asset integration", "Config tuning"],
+    color: "deck-gold",
+  },
+  {
+    id: "bot",
+    label: "Discord bot",
+    short: "AUTOMATION",
+    icon: Bot,
+    title: "Bot Discord yang bekerja di belakang layar.",
+    description: "Bot custom untuk moderation, notifikasi server, ticket, whitelist, logging, command, dan integrasi workflow komunitas.",
+    tools: ["Commands", "Webhooks", "Moderation"],
+    color: "deck-purple",
+  },
+  {
+    id: "custom",
+    label: "Plugin & script",
+    short: "CUSTOM CODE",
+    icon: Braces,
+    title: "Plugin custom dan script sesuai kebutuhan.",
+    description: "Dari fitur kecil sampai sistem gameplay yang spesifik—dibuat sesuai flow server, bukan dipaksa mengikuti plugin generik.",
+    tools: ["Java / Paper API", "Custom events", "Utility scripts"],
+    color: "deck-cyan",
+  },
+];
+
 function LogoMark() {
   return (
     <div className="logo-mark" aria-hidden="true">
@@ -137,6 +191,7 @@ function LogoMark() {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMode, setActiveMode] = useState("foundation");
+  const [activeSkill, setActiveSkill] = useState("discord");
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -154,6 +209,7 @@ export default function Home() {
 
           <nav className={menuOpen ? "nav-links is-open" : "nav-links"} aria-label="Navigasi utama">
             <a href="#services" onClick={closeMenu}>Services</a>
+            <a href="#skills" onClick={closeMenu}>Skills</a>
             <a href="#about" onClick={closeMenu}>About me</a>
             <a href="#contact" onClick={closeMenu}>Contact</a>
           </nav>
@@ -325,6 +381,49 @@ export default function Home() {
                 </div>
               ) : null;
             })}
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" className="skill-deck-section">
+        <div className="page-wrap">
+          <div className="skill-deck-heading">
+            <div>
+              <div className="section-kicker">/ SKILL DECK</div>
+              <h2>Satu orang.<br /><span>Banyak layer.</span></h2>
+            </div>
+            <p>Jelajahi kemampuan yang bisa saya bawa ke project Anda. Klik kartu untuk melihat bentuk konkretnya.</p>
+          </div>
+          <div className="skill-deck-layout">
+            <div className="skill-stack" role="tablist" aria-label="Skill Reiji Kurose">
+              {skillDeck.map((skill, index) => {
+                const Icon = skill.icon;
+                return (
+                  <button key={skill.id} type="button" role="tab" aria-selected={activeSkill === skill.id} className={`skill-card ${activeSkill === skill.id ? "is-active" : ""} ${skill.color}`} onClick={() => setActiveSkill(skill.id)}>
+                    <span className="skill-card-index">0{index + 1}</span>
+                    <span className="skill-card-icon"><Icon size={18} /></span>
+                    <span className="skill-card-label">{skill.label}</span>
+                    <ArrowUpRight size={17} className="skill-card-arrow" />
+                  </button>
+                );
+              })}
+            </div>
+            <div className="skill-detail" aria-live="polite">
+              {skillDeck.map((skill) => {
+                const Icon = skill.icon;
+                return activeSkill === skill.id ? (
+                  <div className="skill-detail-inner" key={skill.id}>
+                    <div className="skill-detail-top"><span><Icon size={15} /> {skill.short}</span><span>REIJI / 0{skillDeck.indexOf(skill) + 1}</span></div>
+                    <div className="skill-detail-orb"><Icon size={37} /></div>
+                    <h3>{skill.title}</h3>
+                    <p>{skill.description}</p>
+                    <div className="skill-tool-list">{skill.tools.map((tool) => <span key={tool}><Check size={13} /> {tool}</span>)}</div>
+                    <a href="#contact" className="skill-detail-cta">Bawa skill ini ke project <ArrowUpRight size={16} /></a>
+                  </div>
+                ) : null;
+              })}
+              <div className="skill-detail-grid" />
+            </div>
           </div>
         </div>
       </section>
