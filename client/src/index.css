@@ -80,7 +80,8 @@
 .logo-pixel-two { border-radius: 2px; height: 8px; left: 16px; top: 12px; transform: skewY(-25deg); width: 8px; }
 .logo-pixel-three { background: #d8fbfc; border-radius: 2px; height: 7px; left: 8px; top: 18px; transform: skewY(-25deg); width: 7px; }
 .nav-links { align-items: center; display: flex; flex: 1; gap: 27px; margin-left: 30px; }
-.nav-links a { color: #557481; font-size: 12px; font-weight: 700; letter-spacing: 0.03em; transition: color 180ms ease; }
+.nav-links a { align-items: center; color: #557481; display: inline-flex; font-size: 11px; font-weight: 700; gap: 7px; letter-spacing: 0.03em; transition: color 180ms ease; }
+.nav-links a span { color: #8ab2bb; font-family: 'DM Mono', monospace; font-size: 8px; font-weight: 400; }
 .nav-links a:hover, .text-link:hover { color: #009fbe; }
 .nav-availability { align-items: center; border: 1px solid #c6e8ee; border-radius: 999px; color: #28738b; display: inline-flex; font-family: 'DM Mono', monospace; font-size: 10px; gap: 8px; padding: 9px 13px; white-space: nowrap; }
 .status-dot { background: #23c3b1; border-radius: 999px; box-shadow: 0 0 0 4px rgba(35, 195, 177, 0.12); display: inline-block; height: 6px; width: 6px; }

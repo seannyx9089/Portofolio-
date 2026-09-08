@@ -208,10 +208,10 @@ export default function Home() {
           </a>
 
           <nav className={menuOpen ? "nav-links is-open" : "nav-links"} aria-label="Navigasi utama">
-            <a href="#services" onClick={closeMenu}>Services</a>
-            <a href="#skills" onClick={closeMenu}>Skills</a>
-            <a href="#about" onClick={closeMenu}>About me</a>
-            <a href="#contact" onClick={closeMenu}>Contact</a>
+            <a href="#services" onClick={closeMenu}><span>01</span> Services</a>
+            <a href="#blueprint" onClick={closeMenu}><span>02</span> Blueprint</a>
+            <a href="#skills" onClick={closeMenu}><span>03</span> Skills</a>
+            <a href="#contact" onClick={closeMenu}><span>04</span> Contact</a>
           </nav>
 
           <a className="nav-availability" href="#contact">
@@ -348,7 +348,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="blueprint-section">
+      <section id="blueprint" className="blueprint-section">
         <div className="blueprint-grid-lines" />
         <div className="page-wrap blueprint-layout">
           <div className="blueprint-intro">
